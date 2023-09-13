@@ -6,17 +6,17 @@ To play the Hangman game, follow these instructions:
 
 Clone the Repository: You can clone this repository to your local machine using the following command:
 
-shell
+Shell
 Copy code
 git clone https://github.com/your-username/hangman-game.git
 Navigate to the Directory: Change your current directory to the one containing the game files.
 
-shell
+Shell
 Copy code
 cd hangman-game
 Run the Game: Execute the script by running the following command:
 
-shell
+Shell
 Copy code
 python hangman.py
 Play the Game: The game will start, and you will be prompted to enter a character to guess the word.
