@@ -1,43 +1,55 @@
-import random
+Hangman Game
+This is a simple implementation of the classic Hangman game in Python. The game randomly selects a word from a predefined list, and the player must guess the letters of the word within a limited number of attempts.
 
-# List of predefined words that the palyers need to guess
-word_list= ["banana","watermelon","cherry","strawbery"]
+Getting Started
+To play the Hangman game, follow these instructions:
 
-def select_random_word():
-    #Select a random word from the list
-    return random.choice(word_list)
+Clone the Repository: You can clone this repository to your local machine using the following command:
 
-def initialize_game():
-    #Give out all the variables that is needed to execute the game
-    word_to_guess= select_random_word()
-    display_word= len(word_to_guess)* "_"
-    attempts_left= 5 
+shell
+Copy code
+git clone https://github.com/your-username/hangman-game.git
+Navigate to the Directory: Change your current directory to the one containing the game files.
 
-    return word_to_guess, display_word, attempts_left
+shell
+Copy code
+cd hangman-game
+Run the Game: Execute the script by running the following command:
 
-def main():
-    print("Welcome to the Hangman game!")
+shell
+Copy code
+python hangman.py
+Play the Game: The game will start, and you will be prompted to enter a character to guess the word.
 
-    #Intitialize the game
-    word_to_guess, display_word, attempts_left= initialize_game()
+Game Rules
+You have a limited number of attempts (default: 5) to guess the word.
 
-    while attempts_left>0:
-        print(f"Word: {display_word}")
-        print(f"Attempts left: {attempts_left}")
-        
-        #Get user's input of the character
-        guess= input("Enter a character:").lower()
+The game will display the current state of the word with underscores for unguessed letters. You can see your progress with each correct guess.
 
-        #Check if the character that the player guessed is in the real word
-        if guess in word_to_guess:
-            print("That's a correct guess!")
-            new_display_word=""
-            for i in range(len(word_to_guess)):
-                if word_to_guess[i] == guess:
-                    new_display_word= new_display_word + guess
-                else:
-                    new_display_word= new_display_word + display_word[i]
-            display_word= new_display_word
+If you guess a letter that is in the word, it will be revealed in its correct position(s).
+
+If you guess a letter that is not in the word, you will lose an attempt.
+
+If you correctly guess all the letters in the word, you win the game.
+
+If you run out of attempts without guessing the word, you lose the game.
+
+Customizing the Word List
+You can customize the word list by modifying the word_list variable in the code. Add or remove words to change the set of words that the game can randomly select from.
+
+python
+Copy code
+word_list = ["banana", "watermelon", "cherry", "strawberry"]
+Enjoy the Game!
+Have fun playing Hangman! Test your word-guessing skills and see if you can guess the hidden words within the given number of attempts. Good luck!
+
+
+
+
+
+Regenerate
+Send a message
+
         else:
             print("Incorrect guess.")
             attempts_left= attempts_left -1
